@@ -1,0 +1,34 @@
+
+  <div class="container">
+    <div class="py-5">
+
+      <div class="card">
+        <h2 class="card-header">Search for Quotes</h2>
+        <div class="card-block">
+          <div class="card">
+
+            <form novalidate>
+              <fieldset>
+                <div class="form-group row pt-3">
+                  <label class="px-5 col-4"><h3>Account Manager</h3></label>
+                  <input type="text" class="form-control form-control-lg col-7" placeholder="Search for quote by Account Manager">
+                </div>
+
+                <div class="form-group row">
+                  <label class="px-5 col-4"><h3>Inside Sales Rep</h3></label>
+                  <input type="text" class="form-control form-control-lg col-7" placeholder="Search for quote by Inside Sales Rep">
+                </div>
+              </fieldset>
+              <div class="form-group px-5">
+                <label class="form-check-label">
+                  <input class="form-check-input big-checkbox" type="checkbox" value="">
+                  <h3>Include closed Quotes</h3>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <app-quote-search-results [quoteSummaries]="quoteSearchResults"></app-quote-search-results>
+    </div>
+  </div>
