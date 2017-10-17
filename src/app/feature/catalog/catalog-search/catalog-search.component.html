@@ -28,6 +28,6 @@
       <div *ngIf="catalogSearchResults" class="card alert alert-info my-2">
         Showing {{catalogSearchResults.length}} of {{catalogSearchResults.length}} results.
       </div>
-       <app-catalog-search-results [catalogItemSummaries]="catalogSearchResults"></app-catalog-search-results>
+       <app-catalog-search-results [catalogItemSummaries]="catalogSearchResults" *ngIf="catalogSearchResults"></app-catalog-search-results>
     </div>
   </div>
