@@ -1,4 +1,33 @@
-<section id="catalog-search">
-
-    <app-catalog-search-results [catalogItemSummaries]="catalogSearchResults"></app-catalog-search-results>
-</section>
+  <div class="container">
+    <div class="py-5">
+      <div class="card">
+        <h2 class="card-header">Search the Catalog</h2>
+        <div class="card-block">
+          <div class="card">
+            <form novalidate>
+              <fieldset>
+                <div class="form-group row pt-3">
+                  <label class="px-5 col-4"><h5>Altec Part Number</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for an item by the Altec Part Number">
+                </div>
+                <div class="form-group row">
+                  <label class="px-5 col-4"><h5>Supplier Part Manager</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for an item by the Supplier Part Number">
+                </div>
+                <div class="form-group row">
+                  <label class="px-5 col-4"><h5>Description</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for an item by the Catalog Description">
+                </div>
+              </fieldset>
+            </form>
+          <button (click)="onSubmit()" class="btn btn-primary mx-4 mb-3" >Search</button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div *ngIf="catalogSearchResults" class="card alert alert-info my-2">
+        Showing {{catalogSearchResults.length}} of {{catalogSearchResults.length}} results.
+      </div>
+       <app-catalog-search-results [catalogItemSummaries]="catalogSearchResults"></app-catalog-search-results>
+    </div>
+  </div>

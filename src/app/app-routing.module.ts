@@ -6,10 +6,12 @@ import { QuoteComponent } from './feature/quote/quote/quote.component';
 
 import { CatalogSearchComponent } from './feature/catalog/catalog-search/catalog-search.component';
 import { CatalogItemComponent } from './feature/catalog/catalog-item/catalog-item.component';
+import { AddQuoteComponent } from './feature/quote/add-quote/add-quote.component';
 
 const appRoutes : Routes = [
   { path: "", component: QuoteSearchComponent, pathMatch: 'full'},
   { path: "quote", component: QuoteSearchComponent, pathMatch: 'full'},
+  { path: "quote/new", component: AddQuoteComponent, pathMatch: 'full'},
   { path: "quote/:quoteId", component: QuoteComponent, pathMatch: 'full'},
 
   { path: "catalog", component: CatalogSearchComponent, pathMatch: 'full'},

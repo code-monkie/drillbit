@@ -13,4 +13,7 @@ export class QuoteSearchResultsComponent implements OnInit {
   ngOnInit() {
   }
 
+  showDetails(quoteId: string) {
+    
+  }
 }

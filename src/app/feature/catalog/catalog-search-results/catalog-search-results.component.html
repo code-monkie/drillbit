@@ -1,10 +1,20 @@
-<ul>
-  <li *ngFor="let catalogItemSummary of catalogItemSummaries">
-    {{catalogItemSummary.altecPartNumber}}, 
-    {{catalogItemSummary.supplierPartNumber}}, 
-    {{catalogItemSummary.description}}, 
-    {{catalogItemSummary.price}}, 
-    {{catalogItemSummary.qtyReservable}}, 
-    {{catalogItemSummary.inStock}}, 
-  </li>
-</ul>
+<div class="card">  
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h5>Altec Part Number</h5></th>
+        <th><h5>Supplier Part Number</h5></th>
+        <th><h5>Description</h5></th>
+        <th><h5>In Stock</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let catalogItemSummary of catalogItemSummaries">
+        <th scope="row"><a [routerLink]="['/catalog', catalogItemSummary.internalPartNo]">{{catalogItemSummary.internalPartNo}}</a></th>
+        <th>{{catalogItemSummary.externalPartNo}}</th>
+        <th>{{catalogItemSummary.description}}</th> 
+        <th>{{catalogItemSummary.inStock == true ?  'Y' : 'N'}}</th>
+      </tr>
+    </tbody>
+  </table>`
+</div>

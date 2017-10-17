@@ -1,10 +1,28 @@
-<ul>
-  <li *ngFor="let quoteSummary of quoteSummaries">
-    {{quoteSummary.accountManager}}, 
-    {{quoteSummary.insideSalesRep}}, 
-    {{quoteSummary.status}}, 
-    {{quoteSummary.age}}, 
-    {{quoteSummary.state}}, 
-    {{quoteSummary.contact}}
-  </li>
-</ul>
+<div class="card">  
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h5>Quote</h5></th>
+        <th><h5>Account Manager</h5></th>
+        <th><h5>Inside Sales Rep</h5></th>
+        <th><h5>Status</h5></th>
+        <th><h5>Age</h5></th>
+        <th><h5>State</h5></th>
+        <th><h5>Contact</h5></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quoteSummary of quoteSummaries" [ngClass]="{'alert alert-danger': quoteSummary.age < 5}">
+        <th scope="row"><a [routerLink]="['/quote', quoteSummary.quoteNumber]">{{quoteSummary.quoteNumber}}</a></th>
+        <td>{{quoteSummary.accountManager}}</td>
+        <td>{{quoteSummary.salesRepresentative}}</td>
+        <td>{{quoteSummary.status}}</td>
+        <td>{{quoteSummary.age}}</td>
+        <td>{{quoteSummary.state}}</td>
+        <td>
+          <p>{{quoteSummary.contact.name}}<br><span class="text-muted small">{{quoteSummary.contact.phoneNumber}}</span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>`
+</div>

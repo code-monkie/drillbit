@@ -1,3 +1,11 @@
-<p>
-  Quote works!
-</p>
+<div class="container" *ngIf="quote; else elseBlock">
+  <p>{{quote.quoteNumber}}</p>
+  <p>{{quote.accountManager}}</p>
+  <p>{{quote.insideSalesRep}}</p> 
+  <p>{{quote.status}}</p> 
+  <p>{{quote.age}}</p>
+  <p>{{quote.state}}</p>
+  <p>{{quote.contact.name}}</p>
+  <p>{{quote.contact.phoneNumber}}</p>
+</div>
+ <ng-template #elseBlock>Loading...</ng-template>

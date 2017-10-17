@@ -1,11 +1,13 @@
-
-<div class="card">
-<p></p>
-    {{catalogItem.altecPartNumber}}, 
-    {{catalogItem.vendor}}, 
-    {{catalogItem.vendorPartNumber}}, 
-    {{catalogItem.description}}, 
-    {{catalogItem.customerPrice}}, 
-    {{catalogItem.altecCost}}, 
-    {{catalogItem.quotePrice}}, 
+<div class="container" *ngIf="catalogItem; else elseBlock">
+    <div class="card">
+        <img [src]="getImageUrl()" *ngIf="getImageUrl()" alt="catalogItem.description">
+        {{catalogItem.internalPartNo}}, 
+        {{catalogItem.vendor}}, 
+        {{catalogItem.externalPartNo}}, 
+        {{catalogItem.description}}, 
+        {{catalogItem.customerPrice}}, 
+        {{catalogItem.cost}}, 
+        {{catalogItem.quotePrice}}, 
+    </div>
 </div>
+ <ng-template #elseBlock>Loading...</ng-template>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuoteSummary } from '../../../shared/quote-summary';
+import { Contact  } from '../../../shared/contact';
 import { QuoteService } from '../../../shared/quote.service';
 
 @Component({
@@ -12,10 +13,13 @@ export class QuoteSearchComponent implements OnInit {
   constructor(private quoteService: QuoteService ) { }
 
   ngOnInit() {
-    this.quoteService.getQuoteById("123456").subscribe(
+  }
+
+  onSubmit () {
+    console.log("ngOnInit");
+    this.quoteService.getQuotes().subscribe(
       quoteSearchResults => {
-        this.quoteSearchResults = [];
-        this.quoteSearchResults.push(quoteSearchResults);
+        this.quoteSearchResults = quoteSearchResults;
     });
   }
 }

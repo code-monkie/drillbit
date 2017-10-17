@@ -18,18 +18,16 @@ export class ResourceService {
     .map(this.extractData);
   }
 
-  // post(path: string, body, customHeaders?, put?) : Observable<any> {
-  //   return this.http.request(
-  //     path,
-  //     {
-  //       method: put ? RequestMethod.Put : RequestMethod.Post,
-  //       body: body,
-  //       headers: this.generateHeader(customHeaders),
-  //       withCredentials: true
-  //     }
-  //   )
-  //   .map(this.extractData);
-  // }
+  post(path: string, body, customHeaders?, put?) : Observable<any> {
+    return this.http.request(
+      path,
+      {
+        method: put ? RequestMethod.Put : RequestMethod.Post,
+        body: body
+      }
+    )
+    .map(this.extractData);
+  }
 
   // private generateHeader(headers: Headers) {
   //   if (headers == null) {

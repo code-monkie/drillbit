@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ResourceService } from './resource.service';
 import { ConstantsService } from './constants.service';
+import { QuoteSummary } from './quote-summary';
 
 @Injectable()
 export class QuoteService {
@@ -13,5 +14,9 @@ export class QuoteService {
 
   getQuoteById(quoteId: string) {
     return this.resourceService.get(this.constantsService.getQuoteByIdUrl(quoteId));
+  }
+
+  findQuote(quoteSummary: QuoteSummary) {
+    return this.resourceService.post(this.constantsService.getFindQuoteUrl(), quoteSummary);
   }
 }

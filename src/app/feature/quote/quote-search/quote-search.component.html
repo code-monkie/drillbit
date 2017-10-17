@@ -1,34 +1,38 @@
 
   <div class="container">
     <div class="py-5">
-
       <div class="card">
         <h2 class="card-header">Search for Quotes</h2>
         <div class="card-block">
           <div class="card">
-
             <form novalidate>
               <fieldset>
                 <div class="form-group row pt-3">
-                  <label class="px-5 col-4"><h3>Account Manager</h3></label>
-                  <input type="text" class="form-control form-control-lg col-7" placeholder="Search for quote by Account Manager">
+                  <label class="px-5 col-4"><h5>Quote Number</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for quote by Quote Number">
                 </div>
-
                 <div class="form-group row">
-                  <label class="px-5 col-4"><h3>Inside Sales Rep</h3></label>
-                  <input type="text" class="form-control form-control-lg col-7" placeholder="Search for quote by Inside Sales Rep">
+                  <label class="px-5 col-4"><h5>Account Manager</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for quote by Account Manager">
+                </div>
+                <div class="form-group row">
+                  <label class="px-5 col-4"><h5>Inside Sales Rep</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for quote by Inside Sales Rep">
+                </div>
+                <div class="form-group row">
+                  <label class="px-5 col-4"><h5>Status</h5></label>
+                  <input type="text" class="form-control form-control-md col-7" placeholder="Search for quote by Status">
                 </div>
               </fieldset>
-              <div class="form-group px-5">
-                <label class="form-check-label">
-                  <input class="form-check-input big-checkbox" type="checkbox" value="">
-                  <h3>Include closed Quotes</h3>
-                </label>
-              </div>
             </form>
+          <button (click)="onSubmit()" class="btn btn-primary mx-4 mb-3" >Search</button>
           </div>
         </div>
       </div>
-      <app-quote-search-results [quoteSummaries]="quoteSearchResults"></app-quote-search-results>
+      <br>
+      <div *ngIf="quoteSearchResults" class="card alert alert-info my-2">
+        Showing {{quoteSearchResults.length}} of  {{quoteSearchResults.length}} results.
+      </div>
+      <app-quote-search-results [quoteSummaries]="quoteSearchResults" *ngIf="quoteSearchResults"></app-quote-search-results>
     </div>
   </div>

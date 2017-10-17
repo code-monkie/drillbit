@@ -1,9 +1,10 @@
 export interface CatalogItem {
-    altecPartNumber: string,
+    internalPartNo: string,
     vendor: string,
-    vendorPartNumber: string,
+    externalPartNo: string,
     description: string,
-    customerPrice: number,
-    altecCost: number,
+    custopricemerPrice: number,
+    cost: number,
     quotePrice:number
+    imageUrl: string
 }

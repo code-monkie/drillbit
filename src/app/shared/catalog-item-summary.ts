@@ -1,6 +1,6 @@
 export interface CatalogItemSummary {
-    altecPartNumber: string,
-    supplierPartNumber: string,
+    internalPartNo: string,
+    externalPartNo: string,
     description: string,
     price: number,
     qtyReservable: number,

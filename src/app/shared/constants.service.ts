@@ -7,10 +7,10 @@ export class ConstantsService {
   private log = false;  
   private baseUrl: string = "http://localhost:8080/v1";
 
-  private quoteUrl: string = "http://localhost:8081/quote";
-
+  private quoteUrl: string = this.baseUrl + "/quotes";
+  private findQuoteUrl: string = this.baseUrl + "/quotes/find";
   private customerUrl: string = this.baseUrl + "/customers";
-  private catalogUrl: string = this.baseUrl + "/catalog";
+  private catalogUrl: string = this.baseUrl + "/catalogs";
   private loginUrl: string = this.baseUrl + "/auth/login";
   private logoutUrl: string = this.baseUrl + "/auth/logout";
   
@@ -22,6 +22,10 @@ export class ConstantsService {
 
   getQuoteByIdUrl(quoteId: string) {
       return this.fluentLog(this.quoteUrl + "/" + quoteId);
+  }
+
+  getFindQuoteUrl() {
+    return this.fluentLog(this.findQuoteUrl);
   }
 
   getCustomersUrl() {

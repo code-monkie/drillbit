@@ -16,6 +16,7 @@ import { QuoteSearchComponent } from './feature/quote/quote-search/quote-search.
 import { QuoteComponent } from './feature/quote/quote/quote.component';
 import { CatalogSearchResultsComponent } from './feature/catalog/catalog-search-results/catalog-search-results.component';
 import { QuoteSearchResultsComponent } from './feature/quote/quote-search-results/quote-search-results.component';
+import { AddQuoteComponent } from './feature/quote/add-quote/add-quote.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { QuoteSearchResultsComponent } from './feature/quote/quote-search-result
     QuoteComponent,
     CatalogSearchResultsComponent,
     QuoteSearchResultsComponent,
+    AddQuoteComponent
   ],
   imports: [
     BrowserModule,

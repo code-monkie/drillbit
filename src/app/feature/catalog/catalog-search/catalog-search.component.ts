@@ -11,5 +11,13 @@ export class CatalogSearchComponent implements OnInit {
   constructor(private catalogService: CatalogService) { }
 
   ngOnInit() {
+  
+  }
+
+  onSubmit () {
+      this.catalogService.getCatalogItems().subscribe(
+      catalogSearchResults => {
+        this.catalogSearchResults = catalogSearchResults;
+    });
   }
 }
